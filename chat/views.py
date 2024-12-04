@@ -16,7 +16,7 @@ from provider.models import ApiKey
 from stats.models import TokenUsage
 from .models import Conversation, Message, EmbeddingDocument, Setting, Prompt
 from django.conf import settings
-from django.http import StreamingHttpResponse
+from django.http import StreamingHttpResponse, JsonResponse
 from django.forms.models import model_to_dict
 from rest_framework import viewsets, status
 from rest_framework.response import Response
@@ -883,3 +883,6 @@ def get_openai(openai_api_key):
     if proxy:
         openai.api_base = proxy
     return openai
+
+def health_check(request):
+    return JsonResponse({'status': 'ok'})
