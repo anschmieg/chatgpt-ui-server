@@ -1,5 +1,5 @@
 [[source]]
-url = "https://mirrors.cloud.tencent.com/pypi/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
@@ -19,6 +19,7 @@ dj-rest-auth = "~=3.0.0"
 requests = "~=2.27.1"
 beautifulsoup4 = "~=4.12.0"
 django-simpleui = "*"
+docx2txt = "==0.8"
 
 [dev-packages]
 mysql-connector-python = "~=8.0.32"
