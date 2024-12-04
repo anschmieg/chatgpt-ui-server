@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from chat.views import conversation, gen_title, upload_conversations
+from chat.views import conversation, gen_title, upload_conversations, health_check
 
 urlpatterns = [
     path('api/chat/', include('chat.urls')),
@@ -24,4 +24,6 @@ urlpatterns = [
     path('api/gen_title/', gen_title, name='gen_title'),
     path('api/account/', include('account.urls')),
     path('admin/', admin.site.urls),
+    path('api/health/', health_check, name='health_check'),
+    path('api/ping/', health_check, name='health_check'),
 ]
