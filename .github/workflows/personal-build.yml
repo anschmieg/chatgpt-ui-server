@@ -24,8 +24,8 @@ jobs:
       - name: Install pipenv and update dependencies
         run: |
           python -m pip install --upgrade pip pipenv
-          pipenv lock --requirements > requirements.txt
-          pipenv lock
+          # pipenv lock --requirements > requirements.txt    # generate requirements.txt
+          pipenv lock                                        # update the lockfile 
 
       # Step 4: Set up QEMU for cross-platform builds
       - name: Set up QEMU
